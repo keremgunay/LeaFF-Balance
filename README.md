@@ -108,20 +108,6 @@ These folders may contain project-specific modifications made for the LeaFF-Bala
 Please refer to the license files inside each third-party folder for their original licensing terms.
 
 
-## Author
-
-Kerem Günay
-Department of Electrical and Electronics Engineering
-Yeditepe University
-
-This repository was developed as part of an undergraduate engineering capstone project.
-
-The code is research-oriented and may require manual path editing, environment setup, and dataset preparation before running. Some scripts were written for specific local experiment folders and may need adjustment before reuse.
-
-## License
-
-Third-party code inside `BAGAN/`, `LeafGAN/`, and `StyleGAN2-ADA/` remains under the licenses of the original projects. Always check the license file inside each folder before reuse or redistribution.
-
 ### How to Run StyleGAN2-ADA
 
 StyleGAN2-ADA was used for single-class noise-to-image generation under limited-data conditions.
@@ -181,3 +167,19 @@ python3 bagan_train.py \
 
 # Generate synthetic samples
 python tool_Generate.py
+
+
+## Author
+
+Kerem Günay
+Department of Electrical and Electronics Engineering
+Yeditepe University
+
+This repository was developed as part of an undergraduate engineering capstone project.
+
+The code is research-oriented and may require manual path editing, environment setup, and dataset preparation before running. Some scripts were written for specific local experiment folders and may need adjustment before reuse.
+
+## License
+
+Third-party code inside `BAGAN/`, `LeafGAN/`, and `StyleGAN2-ADA/` remains under the licenses of the original projects. Always check the license file inside each folder before reuse or redistribution.
+
