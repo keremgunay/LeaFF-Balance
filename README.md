@@ -129,9 +129,12 @@ python train.py \
   --kimg=1200 \
   --snap=20 \
   --metrics=fid50k_full
-  
+```
+
 ### How to Run CycleGAN
-  
+CycleGAN is an image-to-image translation GAN used here to convert images between healthy and diseased tomato leaf domains without requiring paired before/after examples.
+
+```bash
   python train.py \
   --dataroot /path/to/dataset \
   --name tomato_domain_translation \
@@ -139,7 +142,7 @@ python train.py \
   --batch_size 1 \
   --n_epochs 100 \
   --n_epochs_decay 100
-  
+```
   
 ### How to Run BAGAN
 
