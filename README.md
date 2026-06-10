@@ -32,7 +32,7 @@ BAGAN was used as a class-balancing GAN approach. It is designed for imbalanced 
 
 In this project, the BAGAN implementation was modified and adapted for tomato plant image classes.
 
-### LeafGAN / CycleGAN Translation
+### LeafGAN / CycleGAN
 
 The LeafGAN folder contains a modified image-to-image translation workflow based on the LeafGAN/CycleGAN family of methods.
 
