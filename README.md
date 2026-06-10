@@ -172,7 +172,5 @@ Yeditepe University
 
 ## License
 
-The root repository contains an MIT license for original project code unless otherwise stated.
-
 Third-party code inside `BAGAN/`, `LeafGAN/`, and `StyleGAN2-ADA/` remains under the licenses of the original projects. Always check the license file inside each folder before reuse or redistribution.
 
