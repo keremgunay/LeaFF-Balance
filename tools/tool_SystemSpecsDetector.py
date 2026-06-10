@@ -1,11 +1,9 @@
 """
 check_env.py
 ------------
-Quick system check for the lab PC.
+Quick system check
 Tells us what we are working with before running any GAN/CNN training.
 
-Just run:
-    python check_env.py
 
 No installation needed. Uses only the standard library + whatever is
 already installed (torch, tensorflow are checked but optional).

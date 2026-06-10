@@ -58,33 +58,3 @@ for class_dir in class_dirs:
 print("\nDone.")
 print(f"Output dataset: {OUTPUT_DIR}")
 
-
-'''
-
-  python3 tool_TrainSeperator.py
-
-
-  yolo classify train \
-  model=yolov8m-cls.pt \
-  data=/workspace/Desktop/LFS-GAN/all_datasets/LFS_split_dataset_critical \
-  epochs=80 \
-  patience=15 \
-  imgsz=224 \
-  batch=64 \
-  workers=6 \
-  device=0 \
-  cache=False \
-  seed=42 \
-  project=/workspace/Desktop/LFS-GAN/results/yolo_cls_runs/critical_dataset\
-  name=critical_baseline_yolov8m_224_e80_b64_w6_seed42
-
-
-  yolo classify val \
-  model=/workspace/Desktop/LFS-GAN/results/yolo_cls_runs/critical_dataset/critical_baseline_yolov8m_224_e80_b64_w6_seed42/weights/best.pt \
-  data=/workspace/Desktop/LFS-GAN/LFS_all_datasets/LFS_split_dataset_criticall  \
-  split=test \
-  imgsz=224 \
-  batch=64 \
-  device=0
-  
-'''

@@ -2,9 +2,6 @@
 """
 Randomly delete images until only TARGET_COUNT remain.
 
-Behavior:
-- If ROOT_FOLDER contains class subfolders, each subfolder is processed separately.
-- If ROOT_FOLDER contains no subfolders, ROOT_FOLDER itself is processed as a single image folder.
 - Folders with fewer than TARGET_COUNT images are left untouched.
 """
 
@@ -12,7 +9,7 @@ import random
 from pathlib import Path
 
 # --- Configure these ---
-ROOT_FOLDER = "/workspace/Desktop/LFS-GAN/CycleGAN_raw/trainA"  # Change this to your dataset folder
+ROOT_FOLDER = "/workspace/Desktop/LFS-GAN/all_datasets/BAGAN_dataset"  # Change this to your dataset folder
 TARGET_COUNT = 2000
 EXTENSIONS = {".jpg", ".jpeg", ".png", ".bmp", ".gif", ".tiff", ".webp"}
 DRY_RUN = False
@@ -101,9 +98,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-'''
-
-python3 tool_ExcessImageDeleter.py
-
-'''

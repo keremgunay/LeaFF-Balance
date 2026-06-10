@@ -2,7 +2,7 @@ import os
 import glob
 
 # ===== CONFIG =====
-folder = "/workspace/Desktop/LFS-GAN/LeafGAN/results/LeafGAN_run_flies/test_165/images"  # Folder to scan for files
+folder = "/workspace/Desktop/LFS-GAN/results/CycleGAN_runs/LeafGAN_run_flies_350/generated_images" 
 phrase = "real"
 dry_run = False  # Set to False to actually delete
 # ==================
@@ -32,9 +32,3 @@ if dry_run:
 else:
     print(f"Done. Removed {len(matches)} file(s).")
 
-
-'''
-
-python3 tool_SpecificImageDeleter.py
-
-'''

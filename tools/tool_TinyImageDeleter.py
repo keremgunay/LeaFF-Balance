@@ -4,8 +4,8 @@ from PIL import Image
 # === CONFIGURATION ===
 ROOT_FOLDER = r"/workspace/Desktop/LFS-GAN/LFS_all_datasets/TEMPORARY SHIT"   # root directory to scan for images
 MIN_SIZE = 128                        # minimum allowed for BOTH height and width
-DRY_RUN = False                 # True = only print what would be deleted
-                                         # False = actually delete files
+DRY_RUN = False                       # True = only print what would be deleted
+
 
 VALID_EXTS = {".jpg", ".jpeg", ".png", ".bmp", ".tif", ".tiff", ".webp"}
 
@@ -58,9 +58,3 @@ def prune_small_images(root_folder, min_size, dry_run=True):
 if __name__ == "__main__":
     prune_small_images(ROOT_FOLDER, MIN_SIZE, DRY_RUN)
 
-
-'''
-
-python3 tool_TinyImageDeleter.py
-
-'''

@@ -84,9 +84,9 @@ if __name__ == "__main__":
 '''
 
 python3 tool_ImageReshaper.py \
---input LFS_all_datasets/TEMPORARY \
---output LFS_all_datasets/LFS_BAGAN_dataset \
---size 128 \
+--input "/workspace/Desktop/LFS-GAN/all_datasets/CycleGAN_raw" \
+--output "/workspace/Desktop/LFS-GAN/all_datasets/CycleGAN_dataroot" \
+--size 256 \
 --ext png
 
 '''
