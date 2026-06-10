@@ -167,7 +167,7 @@ python3 bagan_train.py \
 
 # Generate synthetic samples
 python tool_Generate.py
-
+```
 
 ## Author
 
