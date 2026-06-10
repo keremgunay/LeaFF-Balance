@@ -47,10 +47,6 @@ ADA, or adaptive discriminator augmentation, is useful when training GANs with r
 
 ## Dataset Notes
 
-The full dataset is not included in this repository.
-
-Large image datasets, generated samples, trained model weights, and experiment outputs may be excluded because of file size, privacy, licensing, or storage limitations.
-
 If you want to reproduce the experiments, prepare your dataset in class-based folders such as:
 
 ```text
@@ -64,29 +60,19 @@ dataset/
 └── ...
 ```
 
-Recommended practice:
-
-* Keep training, validation, and test splits separate.
-* Add synthetic images only to the training split.
-* Keep validation and test data real-only.
-* Avoid committing large datasets or model checkpoints directly to GitHub.
-* Use Git LFS for large files if needed.
-
 
 ## Tools
 
 The `tools/` folder contains helper scripts used during the project workflow.
 
-These may include utilities for:
+Tools include:
 
 * RGB image conversion
 * Image resizing
 * Folder restructuring
 * Random sample deletion or class count reduction
-* Dataset balancing preparation
-* File cleanup and preprocessing
-
-The exact usage depends on the script. Check the script names and internal comments before running them.
+* Image cropping based on CVAT exports in COCO data format
+* Dataset splitting to Train Validation and Test folders
 
 
 ## Basic Usage
@@ -122,19 +108,15 @@ These folders may contain project-specific modifications made for the LeaFF-Bala
 Please refer to the license files inside each third-party folder for their original licensing terms.
 
 
-## Project Status
-
-This repository was developed as part of an undergraduate engineering capstone project.
-
-The code is research-oriented and may require manual path editing, environment setup, and dataset preparation before running. Some scripts were written for specific local experiment folders and may need adjustment before reuse.
-
-
 ## Author
 
 Kerem Günay
 Department of Electrical and Electronics Engineering
 Yeditepe University
 
+This repository was developed as part of an undergraduate engineering capstone project.
+
+The code is research-oriented and may require manual path editing, environment setup, and dataset preparation before running. Some scripts were written for specific local experiment folders and may need adjustment before reuse.
 
 ## License
 
