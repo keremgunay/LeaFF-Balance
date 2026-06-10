@@ -1,0 +1,37 @@
+C:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\utils\cpp_extension.py:25: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  from pkg_resources import packaging  # type: ignore[attr-defined]
+Setting up PyTorch plugin "upfirdn2d_plugin"... C:\Users\cagla\Desktop\Kerem Günay\StyleGAN2_project\stylegan2-ada-pytorch\torch_utils\ops\upfirdn2d.py:34: UserWarning: Failed to build CUDA kernels for upfirdn2d. Falling back to slow reference implementation. Details:
+
+Traceback (most recent call last):
+  File "C:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\utils\cpp_extension.py", line 1893, in _run_ninja_build
+    subprocess.run(
+  File "C:\Users\cagla\miniconda3\envs\stylegan2ada\lib\subprocess.py", line 528, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['ninja', '-v', '-j', '1']' returned non-zero exit status 2.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\cagla\Desktop\Kerem Günay\StyleGAN2_project\stylegan2-ada-pytorch\torch_utils\ops\upfirdn2d.py", line 32, in _init
+    _plugin = custom_ops.get_plugin('upfirdn2d_plugin', sources=sources, extra_cuda_cflags=['--use_fast_math'])
+  File "C:\Users\cagla\Desktop\Kerem Günay\StyleGAN2_project\stylegan2-ada-pytorch\torch_utils\custom_ops.py", line 107, in get_plugin
+    torch.utils.cpp_extension.load(name=module_name, build_directory=build_dir,
+  File "C:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\utils\cpp_extension.py", line 1284, in load
+    return _jit_compile(
+  File "C:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\utils\cpp_extension.py", line 1509, in _jit_compile
+    _write_ninja_file_and_build_library(
+  File "C:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\utils\cpp_extension.py", line 1624, in _write_ninja_file_and_build_library
+    _run_ninja_build(
+  File "C:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\utils\cpp_extension.py", line 1909, in _run_ninja_build
+    raise RuntimeError(message) from e
+RuntimeError: Error building extension 'upfirdn2d_plugin': [1/2] C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc --generate-dependencies-with-compile --dependency-output upfirdn2d.cuda.o.d -Xcudafe --diag_suppress=dll_interface_conflict_dllexport_assumed -Xcudafe --diag_suppress=dll_interface_conflict_none_assumed -Xcudafe --diag_suppress=field_without_dll_interface -Xcudafe --diag_suppress=base_class_has_different_dll_interface -Xcompiler /EHsc -Xcompiler /wd4190 -Xcompiler /wd4018 -Xcompiler /wd4275 -Xcompiler /wd4267 -Xcompiler /wd4244 -Xcompiler /wd4251 -Xcompiler /wd4819 -Xcompiler /MD -DTORCH_EXTENSION_NAME=upfirdn2d_plugin -DTORCH_API_INCLUDE_EXTENSION_H -IC:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\include -IC:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\include\torch\csrc\api\include -IC:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\include\TH -IC:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\include\THC "-IC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include" -IC:\Users\cagla\miniconda3\envs\stylegan2ada\Include -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_89,code=sm_89 --use_fast_math -c C:\torch_extensions_stylegan2ada\upfirdn2d_plugin\ba17ba0000d735c5562fc2256b367768\upfirdn2d.cu -o upfirdn2d.cuda.o 
+FAILED: [code=2] upfirdn2d.cuda.o 
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin\nvcc --generate-dependencies-with-compile --dependency-output upfirdn2d.cuda.o.d -Xcudafe --diag_suppress=dll_interface_conflict_dllexport_assumed -Xcudafe --diag_suppress=dll_interface_conflict_none_assumed -Xcudafe --diag_suppress=field_without_dll_interface -Xcudafe --diag_suppress=base_class_has_different_dll_interface -Xcompiler /EHsc -Xcompiler /wd4190 -Xcompiler /wd4018 -Xcompiler /wd4275 -Xcompiler /wd4267 -Xcompiler /wd4244 -Xcompiler /wd4251 -Xcompiler /wd4819 -Xcompiler /MD -DTORCH_EXTENSION_NAME=upfirdn2d_plugin -DTORCH_API_INCLUDE_EXTENSION_H -IC:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\include -IC:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\include\torch\csrc\api\include -IC:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\include\TH -IC:\Users\cagla\miniconda3\envs\stylegan2ada\lib\site-packages\torch\include\THC "-IC:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include" -IC:\Users\cagla\miniconda3\envs\stylegan2ada\Include -D_GLIBCXX_USE_CXX11_ABI=0 -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr -gencode=arch=compute_89,code=sm_89 --use_fast_math -c C:\torch_extensions_stylegan2ada\upfirdn2d_plugin\ba17ba0000d735c5562fc2256b367768\upfirdn2d.cu -o upfirdn2d.cuda.o 
+C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\include\crt/host_config.h(153): fatal error C1189: #error:  -- unsupported Microsoft Visual Studio version! Only the versions between 2017 and 2022 (inclusive) are supported! The nvcc flag '-allow-unsupported-compiler' can be used to override this version check; however, using an unsupported host compiler may cause compilation failure or incorrect run time execution. Use at your own risk.
+upfirdn2d.cu
+ninja: build stopped: subcommand failed.
+
+
+  warnings.warn('Failed to build CUDA kernels for upfirdn2d. Falling back to slow reference implementation. Details:\n\n' + traceback.format_exc())
+Failed!
+upfirdn2d OK torch.Size([1, 1, 16, 16])
