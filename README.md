@@ -24,32 +24,6 @@ The project focuses on:
 Synthetic images are used only for training-set augmentation. Validation and test sets should remain real-only to avoid artificially inflated results.
 
 
-## Repository Structure
-
-```text
-LeaFF-Balance/
-│
-├── BAGAN/
-│   └── Modified BAGAN-based implementation for minority-class image generation.
-│
-├── LeafGAN/
-│   └── Modified LeafGAN/CycleGAN-style image-to-image translation implementation.
-│
-├── StyleGAN2-ADA/
-│   └── Modified StyleGAN2-ADA PyTorch implementation and related generation files.
-│
-├── tools/
-│   └── Utility scripts for dataset preparation, resizing, conversion, filtering, and folder handling.
-│
-├── main.py
-│   └── Main project script / entry point.
-│
-├── README.md
-│
-└── LICENSE
-```
-
-
 ## Methods Included
 
 ### BAGAN
@@ -117,13 +91,6 @@ The exact usage depends on the script. Check the script names and internal comme
 
 ## Basic Usage
 
-Clone the repository:
-
-```bash
-git clone https://github.com/keremgunay/LeaFF-Balance.git
-cd LeaFF-Balance
-```
-
 Because this repository combines multiple GAN implementations, there is no single universal environment guaranteed to run every method. Each GAN folder may require its own dependencies.
 
 General workflow:
@@ -137,7 +104,6 @@ General workflow:
 # 6. Train classifier on real-only baseline and GAN-balanced data
 # 7. Compare test performance
 ```
-
 
 ## Third-Party Code and Attribution
 
@@ -174,3 +140,62 @@ Yeditepe University
 
 Third-party code inside `BAGAN/`, `LeafGAN/`, and `StyleGAN2-ADA/` remains under the licenses of the original projects. Always check the license file inside each folder before reuse or redistribution.
 
+### How to Run StyleGAN2-ADA
+
+StyleGAN2-ADA was used for single-class noise-to-image generation under limited-data conditions.
+
+Example training command:
+
+```bash
+cd StyleGAN2-ADA
+
+python train.py \
+  --outdir=/path/to/results \
+  --data=/path/to/dataset.zip \
+  --gpus=1 \
+  --cfg=paper256 \
+  --batch=16 \
+  --mirror=1 \
+  --aug=ada \
+  --target=0.6 \
+  --kimg=1200 \
+  --snap=20 \
+  --metrics=fid50k_full
+  
+### How to Run CycleGAN
+  
+  python train.py \
+  --dataroot /path/to/dataset \
+  --name tomato_domain_translation \
+  --model cycle_gan \
+  --batch_size 1 \
+  --n_epochs 100 \
+  --n_epochs_decay 100
+  
+  
+### How to Run BAGAN
+
+BAGAN was used for minority-class image generation and dataset balancing.
+
+Example workflow:
+
+```bash
+cd BAGAN
+
+export HSA_OVERRIDE_GFX_VERSION=11.0.0
+export HIP_VISIBLE_DEVICES=0
+export ROCR_VISIBLE_DEVICES=0
+export TF_FORCE_GPU_ALLOW_GROWTH=true
+
+python3 bagan_train.py \
+  --dataset folder \
+  --data_root /path/to/dataset \
+  --image_size 128 \
+  --epochs 200 \
+  --batch_size 32 \
+  --target_class 8 \
+  --learning_rate 0.00005 \
+  --run_name bagan_trips_128_epoch200_300img \
+
+# Generate synthetic samples
+python tool_Generate.py
